@@ -44,6 +44,7 @@ namespace ReverseMeditation {
             }
             meditate.defaultCompleteMode = ToilCompleteMode.Delay;
             //meditate.defaultDuration = job.def.joyDuration;
+            meditate.defaultDuration = 18000;
             meditate.FailOn(() => !MeditationUtility.CanMeditateNow(pawn) || !MeditationUtility.SafeEnvironmentalConditions(pawn, TargetLocA, Map));
             meditate.AddPreTickAction(delegate {
                 var assignment = pawn.GetTimeAssignment();
