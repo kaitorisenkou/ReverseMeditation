@@ -93,7 +93,11 @@ namespace ReverseMeditation {
         //ベースのMeditationTick()から大部分をコピペ
         private void ReverseMeditationTick() {
             pawn.skills.Learn(SkillDefOf.Intellectual, 0.018000001f, false, false);
+#if V15
             pawn.GainComfortFromCellIfPossible(false);
+#else
+            pawn.GainComfortFromCellIfPossible(1,false);
+#endif
             /*
             if (pawn.needs.joy != null) {
                 JoyUtility.JoyTickCheckEnd(pawn, JoyTickFullJoyAction.None, 1f, null);
